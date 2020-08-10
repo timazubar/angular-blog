@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AdminModule } from './admin/admin.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { PostPageComponent } from './post-page/post-page.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
       },
     ],
   },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
 ];
 
 @NgModule({
