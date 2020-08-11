@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
@@ -10,6 +11,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { AuthService } from './shared/services/auth.service';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -37,8 +40,11 @@ import { EditPageComponent } from './edit-page/edit-page.component';
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatFormFieldModule,
     MatToolbarModule,
+    SharedModule,
   ],
   exports: [RouterModule],
+  providers: [AuthService],
 })
 export class AdminModule {}
