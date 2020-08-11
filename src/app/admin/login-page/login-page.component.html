@@ -1,1 +1,45 @@
-<p>login-page works!</p>
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <h2>Login to admin panel</h2>
+    <div
+      class="form-control"
+      [ngClass]="{
+        invalid: form.get('email').touched && form.get('email').invalid
+      }"
+    >
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" />
+      <div
+        class="validation"
+        *ngIf="form.get('email').touched && form.get('email').invalid"
+      >
+        <small *ngIf="form.get('email').errors.required">Input email</small>
+        <small *ngIf="form.get('email').errors.email"
+          >Invalid email format</small
+        >
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="password">Password:</label>
+      <input type="password" id="password" formControlName="password" />
+      <div
+        class="validation"
+        *ngIf="form.get('password').touched && form.get('password').invalid"
+      >
+        <small *ngIf="form.get('password').errors.required"
+          >Input password</small
+        >
+        <small *ngIf="form.get('password').errors.minlength"
+          >Password should be
+          {{ form.get("password").errors.minlength.requiredLength }} symbols or
+          more. Now it is
+          {{
+            form.get("password").errors.minlength.actualLength
+          }}
+          symbols</small
+        >
+      </div>
+    </div>
+    <button type="submit" [disabled]="form.invalid">Login</button>
+  </form>
+</mat-card>

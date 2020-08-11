@@ -1,2 +1,17 @@
-<p>admin-layout works!</p>
-<router-outlet></router-outlet>
+<mat-toolbar>
+  <a [routerLink]="['/']" class="link">Admin layout</a>
+  <span class="spacer"></span>
+  <a
+    [routerLink]="['/admin', 'dashboard']"
+    routerLinkActive="active"
+    class="link"
+    >Dashboard</a
+  >
+  <a [routerLink]="['/admin', 'create']" routerLinkActive="active" class="link"
+    >Create</a
+  >
+  <a href="#" (click)="logout($event)" class="link">Exit</a>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
