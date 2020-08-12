@@ -5,6 +5,9 @@
     <mat-card class="error-card" *ngIf="auth.error$ | async as erorr">
       {{ erorr }}
     </mat-card>
+    <mat-card class="info-card" *ngIf="message">{{
+      message | titlecase
+    }}</mat-card>
 
     <mat-form-field
       class="form-control"
