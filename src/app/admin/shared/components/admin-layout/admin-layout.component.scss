@@ -3,8 +3,8 @@
 }
 
 .link {
-  margin: 0.5rem;
   text-decoration: none;
+  color: #fff;
 }
 
 .container {
@@ -16,4 +16,14 @@
 
 .active {
   color: black;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+
+  li {
+    margin: 0.5rem;
+    padding-left: 0;
+  }
 }

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError, Subject } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 
 import { environment } from './../../../../environments/environment';
 import { User, FireBaseAuthResponse } from './../interfaces/interfaces';
 
 @Injectable()
 export class AuthService {
+  public error$: Subject<string> = new Subject<string>();
+
   constructor(private http: HttpClient) {}
 
   get token(): string {
@@ -28,7 +30,7 @@ export class AuthService {
     `,
         user
       )
-      .pipe(tap(this.setToken));
+      .pipe(tap(this.setToken), catchError(this.handleError.bind(this)));
   }
   logout() {
     this.setToken(null);
@@ -36,6 +38,23 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return !!this.token;
+  }
+
+  private handleError(err: HttpErrorResponse) {
+    const { message } = err.error.error;
+    console.log(message);
+    switch (message) {
+      case 'EMAIL_NOT_FOUND':
+        this.error$.next('Email not found');
+        break;
+      case 'INVALID_EMAIL':
+        this.error$.next('Invalid email');
+        break;
+      case 'INVALID_PASSWORD':
+        this.error$.next('Invalid password');
+        break;
+    }
+    return throwError(err);
   }
 
   private setToken(res: FireBaseAuthResponse | null) {

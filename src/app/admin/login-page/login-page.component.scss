@@ -1,0 +1,19 @@
+.wrapper {
+  width: 30vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-card {
+  margin: 1rem 0;
+  background-color: tomato;
+  color: white;
+}
+
+.input {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
