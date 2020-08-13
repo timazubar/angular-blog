@@ -1,1 +1,49 @@
-<p>create-page works!</p>
+<mat-card class="wrapper">
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+    <h2>New Post</h2>
+
+    <mat-form-field
+      class="form-control"
+      [ngClass]="{
+        invalid: form.get('title').touched && form.get('title').invalid
+      }"
+    >
+      <mat-label>Post title:</mat-label>
+      <input
+        matInput
+        class="input"
+        type="text"
+        placeholder="Post Title"
+        formControlName="title"
+      />
+      <div
+        class="validation"
+        *ngIf="form.get('title').touched && form.get('title').invalid"
+      >
+        <mat-error *ngIf="form.get('title').errors.required"
+          >Input title</mat-error
+        >
+      </div>
+    </mat-form-field>
+    <mat-form-field class="form-control">
+      <mat-label>Post author:</mat-label>
+      <input matInput class="input" type="text" formControlName="author" />
+      <div
+        class="validation"
+        *ngIf="form.get('author').touched && form.get('author').invalid"
+      >
+        <mat-error *ngIf="form.get('author').errors.required"
+          >Input author</mat-error
+        >
+      </div>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Create Post
+    </button>
+  </form>
+</mat-card>
