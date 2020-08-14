@@ -52,6 +52,6 @@ import { SharedModule } from './../shared/shared.module';
     SharedModule,
   ],
   exports: [RouterModule],
-  providers: [AuthGuard, AuthService],
+  providers: [AuthGuard],
 })
 export class AdminModule {}
