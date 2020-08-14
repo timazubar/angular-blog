@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { QuillModule } from 'ngx-quill';
 
@@ -14,6 +15,7 @@ import { QuillModule } from 'ngx-quill';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     MatToolbarModule,
     QuillModule.forRoot(),
   ],
@@ -23,6 +25,7 @@ import { QuillModule } from 'ngx-quill';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     MatToolbarModule,
     QuillModule,
   ],
