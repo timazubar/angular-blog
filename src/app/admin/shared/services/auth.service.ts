@@ -4,7 +4,7 @@ import { Observable, throwError, Subject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 
 import { environment } from './../../../../environments/environment';
-import { User, FireBaseAuthResponse } from './../interfaces/interfaces';
+import { User, FirebaseAuthResponse } from './../interfaces/interfaces';
 
 @Injectable()
 export class AuthService {
@@ -57,7 +57,7 @@ export class AuthService {
     return throwError(err);
   }
 
-  private setToken(res: FireBaseAuthResponse | null) {
+  private setToken(res: FirebaseAuthResponse | null) {
     if (res) {
       const expDate = new Date(new Date().getTime() + +res.expiresIn * 1000);
       localStorage.setItem('fb-token', res.idToken);
