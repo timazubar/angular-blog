@@ -1,11 +1,21 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Post Title</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    Post body
-  </mat-card-content>
-  <mat-card-actions>
-    <button [routerLink]="['/']">Back to home</button>
-  </mat-card-actions>
-</mat-card>
+<div class="wrapper" *ngIf="post$ | async as post; else loading">
+  <mat-card class="card-wrapper">
+    <div class="card-header-wrapper">
+      <div class="title-author-wrapper">
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-subtitle>{{ post.author }} </mat-card-subtitle>
+      </div>
+      <p>{{ post.date | date: "dd.MM.yyyy HH:mm" }}</p>
+    </div>
+    <mat-card-content>
+      <quill-view-html [content]="post.content"></quill-view-html>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="primary" [routerLink]="['/']">
+        Back to home
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #loading>Loading post...</ng-template>

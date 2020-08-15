@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-wrapper {
+  margin: 2rem;
+}
+
+.card-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-author-wrapper {
+  display: flex;
+  flex-direction: column;
+}

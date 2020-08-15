@@ -1,4 +1,18 @@
+.card-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-subtitle-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .post-wrap {
   margin: 1rem;
   width: 40rem;
+}
+
+.card-author {
+  font-size: 1rem;
 }

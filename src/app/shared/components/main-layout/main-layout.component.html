@@ -1,4 +1,13 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <span>Angular Blog</span>
+  <span class="spacer"></span>
+  <button
+    mat-icon-button
+    class="login-icon account_circle-icon"
+    aria-label="Login icon"
+    [routerLink]="['/admin']"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
 </mat-toolbar>
 <router-outlet></router-outlet>
