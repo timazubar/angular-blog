@@ -24,15 +24,15 @@
       </div>
     </mat-form-field>
     <div class="form-control">
-      <quill-editor formControlName="text"></quill-editor>
+      <quill-editor formControlName="content"></quill-editor>
     </div>
     <button
       mat-raised-button
       color="primary"
       type="submit"
-      [disabled]="form.invalid"
+      [disabled]="form.invalid || submitted"
     >
-      Save
+      Update
     </button>
   </form>
 </div>
