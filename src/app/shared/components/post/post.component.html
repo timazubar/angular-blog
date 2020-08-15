@@ -1,11 +1,22 @@
-<mat-card>
+<mat-card class="post-wrap">
   <mat-card-title>
-    Post Title
+    {{ post.title }}
   </mat-card-title>
   <mat-card-subtitle>
-    09.08.2020
+    {{ post.date | date: "dd.MM.yyyy HH:mm" }}
   </mat-card-subtitle>
+  <mat-card-content>
+    <p>
+      {{ post.author }}
+    </p>
+  </mat-card-content>
   <mat-card-actions>
-    <button [routerLink]="['/post', 1234]">Open</button>
+    <button
+      mat-stroked-button
+      color="primary"
+      [routerLink]="['/post', post.id]"
+    >
+      Open
+    </button>
   </mat-card-actions>
 </mat-card>
