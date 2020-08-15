@@ -1,0 +1,22 @@
+.alert-wrap {
+  position: fixed;
+  top: 100px;
+  right: 40px;
+  max-width: 200px;
+}
+
+.alert {
+  &-success {
+    background-color: #00a000;
+    color: #fff;
+  }
+
+  &-warning {
+    background-color: #fdcf00;
+  }
+
+  &-danger {
+    background-color: #ff6347;
+    color: #fff;
+  }
+}

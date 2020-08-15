@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+import { AlertService } from './../shared/services/alert.service';
 import { PostsService } from './../../shared/posts.service';
 import { Post } from './../shared/interfaces/interfaces';
 
@@ -19,6 +20,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
   updSub: Subscription;
 
   constructor(
+    private alert: AlertService,
     private route: ActivatedRoute,
     private postsService: PostsService
   ) {}
@@ -54,6 +56,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
       })
       .subscribe(() => {
         this.submitted = false;
+        this.alert.success('Post has been updated');
       });
   }
 
