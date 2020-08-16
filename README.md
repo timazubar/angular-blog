@@ -2,26 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
+## Deployed version on Firebase
+
+[Link to deployed project](https://angular-blog-t.web.app/)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Technologies used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Project is performed with usage of following technologies:
 
-## Build
+- Angular 10
+- Angular Material (for design)
+- Quill plugin (for post editor)
+- Firebase (for data storage)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Admin panel
 
-## Running unit tests
+Admin panel provides more functionality to create and edit posts, and it is protected with authorization.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To login to admin panel, use following info:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- email: admin@gmail.com
+- password: 12345678
